@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>2021 MINI HOMEPAGE</title>
+    <link rel="stylesheet" href="./static/diary.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle:wght@300&family=Gothic+A1:wght@800&family=Gowun+Dodum&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle:wght@300;700&family=Gothic+A1:wght@800&family=Gowun+Dodum&family=Roboto+Condensed:wght@700&display=swap');    </style>
+  </head>
+  <body>
+    <div class="bookcover">
+      <div class="bookdot">
+        <div class="page">
+          <div class="row1">
+            <div class="column1">Today</div>
+            <div class="column2">
+              <div class="profile">
+                <div class="profile_pic">
+                  <img src="C:\Users\likes\Documents\웹 스터디\mainsoodal.jpeg" width="200px" height="200px">
+                </div>
+                
+                <div class="profile_txt">
+                  나는 수달
+                </div>
+
+                <div class="profile_me">
+                  <select onchange="window.open(value,'_self');">
+                    <option>파도 타기</option>
+                    <option value="https://www.naver.com/">naver</option>
+                    <option value="https://www.youtube.com/">youtube</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row2">
+
+            <div class="state">
+              <div class="comment">
+                <div class="column3">어서오세용</div>
+              </div>
+            </div>
+
+            <div class="calender">
+                <div class="nowdata">05.30<br>MON</div>
+                <div class="databox">
+                    <div class="data" style="color:red">1</div>
+                    <div class="data">2</div>
+                    <div class="data">3</div>
+                    <div class="data">4</div>
+                    <div class="data" style="color:red">5</div>
+                    <div class="data">6</div>
+                    <div class="data" style="color:blue">7</div>
+                    <div class="data" style="color:red">8</div>
+                    <div class="data">9</div>
+                    <div class="data">10</div>
+                    <div class="data">11</div>
+                    <div class="data">12</div>
+                    <div class="data">13</div>
+                    <div class="data" style="color:blue">14</div>
+                    <div class="data" style="color:red">15</div>
+                    <div class="data">16</div>
+                    <div class="data">17</div>
+                    <div class="data">18</div>
+                    <div class="data">19</div>
+                    <div class="data">20</div>
+                    <div class="data" style="color:blue">21</div>
+                    <div class="data" style="color:red">22</div>
+                    <div class="data">23</div>
+                    <div class="data">24</div>
+                    <div class="data">25</div>
+                    <div class="data">26</div>
+                    <div class="data">27</div>
+                    <div class="data" style="color:blue">28</div>
+                    <div class="data" style="color:red">29</div>
+                    <div class="data">30</div>
+                    <div class="data">31</div>
+                </div>
+            </div>
+
+            <div class="contentList">
+                <div class="diaryList">
+                    <div class="diary">
+                        <div class="diary_data">2022.05.30 월 15:00</div>
+                        <div class="diary_txt">
+                            오늘은 조개껍질을 10개 모았다.
+                        </div>
+                    </div>
+
+                    <div class="diary">
+                        <div class="diary_data">2022.05.29 일 15:00</div>
+                        <div class="diary_txt">
+                            오늘은 나뭇가지로 집을 지었다.
+                        </div>  
+                    </div>
+
+                    <div class="diary">
+                        <div class="diary_data">2022.05.28 토 15:00</div>
+                        <div class="diary_txt">
+                            오늘은 물고기를 먹었다.
+                        </div>  
+                    </div>
+                </div>
+                <center>
+                    <button class="lockbox" id="sample" onclick="getTextFile()"><i class="fa-solid fa-lock"></i>수달의 비밀일기 보기</button>
+                </center>
+            </div>
+
+            
+
+            
+          </div>
+          <div class="sidebox">
+            <div class="menu">
+              <ul>
+                <li><a href="./home.html">홈</li>
+                <li><a href="./diary.html">일기장</li>
+                <li><a href="./photo.html">사진첩</a></li>
+                <li><a href="./guest.html">방명록</li>
+  
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        function getTextFile(){
+            var input = document.createElement("input");
+            input.type = "file";
+            input.accept = "text/plain";
+            input.onchange = function(event){
+                processFile(event.target.files[0]);
+            };
+            input.click();
+        }
+
+        function processFile(file){
+            var reader = new FileReader();
+            reader.readAsText(file, "utf-8");
+
+            reader.onload = function(){
+                document.getElementById("sample").innerText = reader.result;
+            };
+        }
+    </script>
+  </body>
+</html>
